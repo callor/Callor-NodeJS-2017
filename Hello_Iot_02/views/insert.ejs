@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include header.ejs %>
+<script>
+
+$(document).ready(function(){
+	$('input').addClass('w3-input w3-border w3-hover-yellow');
+	$('section').addClass('w3-margin w3-padding-16')
+})
+
+</script>
+</head>
+<body  class='w3-padding-16'>
+	<% include pageheader.ejs %>
+	<article class='w3-margin w3-padding-16'>
+		<form action='<%- action %>' method='post'>
+		<section>
+			<label>이름</label>
+			<input type='text' id='strName' name='strName' value='<%- item.strName %>'>
+		</section>
+		<section>
+			<label>주소</label>
+			<input type='text' id='strAddr' name='strAddr'  value='<%- item.strAddr %>'>
+		</section>
+		<section>
+			<label>전화번호</label>
+			<input type='tel'  id='strTel' name='strTel'  value='<%- item.strTel %>'>
+		</section>
+		<section>
+			<label>나이</label>
+			<input type='number' id='intAge' name='intAge'  value='<%- item.intAge %>'>
+		</section>
+		<section class='w3-right'>
+			<button type='submit' class='w3-button w3-blue'>저장</button>
+		</section>
+		</form>
+	</article>
+</body>
+</html>

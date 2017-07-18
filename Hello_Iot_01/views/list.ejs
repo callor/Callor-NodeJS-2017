@@ -1,0 +1,20 @@
+<table border=1>
+	<tr>
+		<th>이름</th>
+		<th>주소</th>
+		<th>전화번호</th>
+		<th>나이</th>
+	</tr>
+	<!-- 여기에서 부터 본문 list -->
+	<% list.forEach(function(item){ %>
+	<tr>
+		<!-- 수정을 위해 이름에 anchor를 연결 -->
+		<td><a href='/update/<%- item._id %>'><%- item.strName %></a></td>
+		<td><%- item.strAddr %></td>
+		<td><%- item.strTel %></td>
+		<td><%- item.intAge %></td>
+		<td><a href='/delete/<%- item._id %>'>삭제</a></td>
+	</tr>
+	<% }) %>
+</table>
+<a href='/'>새로추가</a>

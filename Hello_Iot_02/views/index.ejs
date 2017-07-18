@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include header.ejs %>
+<script>
+$(document).ready(function(){
+
+	$('#newBtn').click(function(){
+		// alert('새로작성 버튼 클릭');
+		// 현재 화면을 /insert로 redirectio 하라
+		$(location).attr('href','/insert')
+	})
+	
+	$('.item').click(function(){
+		
+		// tr의 class가 item 인 줄(row)가 클릭되면,
+		// 클릭된 row의 id값(item._id)을 추출해서 id 변수에 저장한다.
+		var id = $(this).attr('id')
+		$(location).attr('href','/update/'+id)
+		
+	})
+})
+
+</script>
+</head>
+<body class='w3-padding-16'>
+	<% include pageheader.ejs %>
+	<article class='w3-container w3-margin w3-padding-16 w3-light-gray'>
+		<table class="w3-table w3-white w3-striped w3-bordered w3-hoverable">
+			<tr>
+				<th>이름</th>
+				<th>주소</th>
+				<th>전화번호</th>
+				<th>나이</th>
+			</tr>
+			<% list.forEach(function(item){ %>
+			<tr class='item' id='<%- item._id %>'>
+				<td><%- item.strName %></td>
+				<td><%- item.strAddr %></td>
+				<td><%- item.strTel %></td>
+				<td class='age'><%- item.intAge %></td>
+			</tr>
+			<% }) %>
+		</table>
+	</article>
+	<footer class='w3-contailner w3-margin w3-padding-16 w3-right'>
+		<button type='button' class='w3-button w3-blue' id='newBtn'>새로작성</button>
+	</footer>
+</body>
+</html>

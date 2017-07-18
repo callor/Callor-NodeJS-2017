@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>회원 리스트</h2>
+	<br>
+	<a href='/insert'>회원추가</a>
+	<table border=1>
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>나이</th>
+			<th></th>
+		</tr>
+		
+		<% list.forEach(function(item){ %>
+		<tr>
+			<td>
+			<a href='/update/<%- item._id %>'><%- item.strName %></a></td>
+			<td><%- item.strAddr %></td>
+			<td><%- item.intAge %></td>
+			<td><a href='/delete/<%-item._id %>' >삭제</a></td>
+		</tr>
+		<% }) %>
+		
+	</table>
+</body>
+</html>
+
+
+
+

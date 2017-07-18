@@ -1,0 +1,8 @@
+<form action='<%- action %>' method='post'>
+	<input type='hidden' name='id' value='<%- item._id %>'
+	<p>이름<input type='text' name='strName' value='<%- item.strName %>' ></p> 
+	<p>주소<input type='text' name='strAddr' value='<%- item.strAddr %>'></p>
+	<p>전화번호<input type='text' name='strTel' value='<%- item.strTel %>'></p> 
+	<p>나이<input type='text' name='intAge' value='<%- item.intAge %>'></p>
+	<p><button type='submit'>저장</button></p>
+</form>
