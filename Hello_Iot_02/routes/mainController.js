@@ -19,7 +19,6 @@ module.exports = (app,addrVO)=>{
 	
 	app.get('/update/:id',(req,res)=>{
 		let id = req.params.id
-	
 		addrVO.findOne({_id:id},(err,data)=>{
 			res.render('insert',{item:data,action:'/update'})
 		})
