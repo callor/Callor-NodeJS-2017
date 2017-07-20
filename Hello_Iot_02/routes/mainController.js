@@ -24,4 +24,33 @@ module.exports = (app,addrVO)=>{
 		})
 	})
 	
+	app.post('/update',(req,res)=>{
+		let id = req.body.id; // <input id>
+					// update 조건
+							   // update 할 내용
+		addrVO.update({_id:id},{$set:req.body},(err,data)=>{
+				res.redirect('/');
+		})
+	})
+	
+	app.get('/delete/:id',(req,res)=>{
+	
+		let id = req.params.id;
+		addrVO.remove({_id:id},(err,data)=>{
+			res.redirect('/')
+		})
+		
+	})
+	
 }
+
+
+
+
+
+
+
+
+
+
+

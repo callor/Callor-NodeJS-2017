@@ -7,6 +7,12 @@
 $(document).ready(function(){
 	$('input').addClass('w3-input w3-border w3-hover-yellow');
 	$('section').addClass('w3-margin w3-padding-16')
+	$('#deleteBtn').click(function(){
+		var id = $('#id').val();
+		if(confirm('정말 삭제하시겠습니까')) {
+			$(location).attr('href','/delete/'+id);	
+		}
+	})
 })
 
 </script>
@@ -15,6 +21,7 @@ $(document).ready(function(){
 	<% include pageheader.ejs %>
 	<article class='w3-margin w3-padding-16'>
 		<form action='<%- action %>' method='post'>
+		<input type='hidden' id='id' name='id' value='<%- item._id %>'>
 		<section>
 			<label>이름</label>
 			<input type='text' id='strName' name='strName' value='<%- item.strName %>'>
@@ -32,6 +39,7 @@ $(document).ready(function(){
 			<input type='number' id='intAge' name='intAge'  value='<%- item.intAge %>'>
 		</section>
 		<section class='w3-right'>
+			<button type='button' id='deleteBtn' class='w3-button w3-red'>삭제</button>
 			<button type='submit' class='w3-button w3-blue'>저장</button>
 		</section>
 		</form>

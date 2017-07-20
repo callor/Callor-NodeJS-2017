@@ -1,0 +1,33 @@
+<script>
+$(document).ready(function(){
+	$('tr.item').click(function(){
+		var thisId = $(this).attr('id')
+		$.post('/getitem',{id:thisId},function(result){
+			$('#id').val(result._id);
+			$('#strName').val(result.strName);
+			$('#strAddr').val(result.strAddr);
+			$('#strTel').val(result.strTel);
+			$('#intAge').val(result.intAge);
+		})
+	})
+})
+
+</script>
+<article class='w3-container w3-margin w3-padding-16 w3-light-gray'>
+	<table class="w3-table w3-white w3-striped w3-bordered w3-hoverable">
+		<tr>
+			<th>이름</th>
+			<th>주소</th>
+			<th>전화번호</th>
+			<th>나이</th>
+		</tr>
+		<% list.forEach(function(item){ %>
+		<tr class='item' id='<%- item._id %>'>
+			<td><%- item.strName %></td>
+			<td><%- item.strAddr %></td>
+			<td><%- item.strTel %></td>
+			<td class='age'><%- item.intAge %></td>
+		</tr>
+		<% }) %>
+	</table>
+</article>
