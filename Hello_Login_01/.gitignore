@@ -1,0 +1,7 @@
+# 암호 Key 파일 업로그 금지
+secret.js
+
+
+# 업로드 금지 폴더들
+.settings/
+node_modules/

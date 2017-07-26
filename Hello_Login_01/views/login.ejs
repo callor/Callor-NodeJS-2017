@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<% include header.ejs %>
+<style>
+#loginBox {
+	/* 어떤 특정 위치에 고정 */
+	position: relative;
+}
+
+#loginBox #loginBody {
+	background-color: #FEF3EA;
+	border: 1px solid #C07C40;
+	position: absolute;
+	padding: 8px;
+	z-index: 1;
+}
+</style>
+<script>
+	$(document).ready(function() {
+		var boxReSize = function() {
+			$('#loginBody').css('width', $(window).width() / 2);
+			$('#loginBody').css('height', $(window).height() / 2);
+
+			$('#loginBox').css('top', $('#loginBody').height() / 2);
+			$('#loginBox').css('left', $('#loginBody').width() / 2);
+		}
+
+		boxReSize();
+		$(window).resize(function() {
+			boxReSize();
+		})
+		$('section').addClass('w3-margin')
+		$('label').addClass('w3-text-blue');
+		$('input').addClass('w3-input w3-border w3-hover-light-gray')
+	})
+</script>
+</head>
+<body class='w3-light-gray w3-margin'>
+	<article id='loginBox'>
+		<section id='loginBody'>
+			<h3 class='w3-blue'>로그인</h3>
+			<form>
+				<section>
+					<label><b>이메일</b></label> <input type='email' id='strEmail'
+						name='strEmail'> <label><b>비밀번호</b></label> <input
+						type='password' id='strPassword' name='strPassword'>
+						<section class='w3-right'>
+						<button type='submit' id='loginBtn' class='w3-button w3-blue'>
+						로그인
+						</button>
+						</section>
+				</section>
+
+			</form>
+		</section>
+	</article>
+</body>
+</html>

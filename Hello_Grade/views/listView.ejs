@@ -1,0 +1,42 @@
+<script>
+$(document).ready(function(){
+	$('tr.mlist').click(function(){
+		var id = $(this).attr('id') // tr에 설정된 id 값을 추출
+		$.post('/getitem',{id:id},
+				function(result){
+				// 결과 처리할부분
+				$('#id').val(id) // update, delete를 위해 id가 필요하다.
+				$('#strNum').val(result.strNum)
+				$('#strName').val(result.strName)
+				$('#intKor').val(result.intKor)
+				$('#intEng').val(result.intEng)
+				$('#intMath').val(result.intMath)
+				$('#intTotal').val(result.intTotal)
+				$('#intAvg').val(result.intAvg)
+				$('#saveBtn').text('수정')
+		})
+	})
+})
+</script>
+<table class='w3-table w3-border w3-hoverable'>
+	<tr>
+		<th>학번</th>
+		<th>이름</th>
+		<th>국어</th>
+		<th>영어</th>
+		<th>수학</th>
+		<th>총점</th>
+		<th>평균</th>
+	</tr>
+	<% list.forEach(function(item){ %>
+	<tr class='mlist' id='<%- item._id %>'>
+		<td><%- item.strNum %></td>
+		<td><%- item.strName %></td>
+		<td><%- item.intKor %></td>
+		<td><%- item.intEng %></td>
+		<td><%- item.intMath %></td>
+		<td><%- item.intTotal %></td>
+		<td><%- item.intAvg %></td>
+	</tr>
+	<% }) %>
+</table>

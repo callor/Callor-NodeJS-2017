@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include header.ejs %>
+<script src='/js/join.js'></script>
+</head>
+<body>
+<h3>회원등록</h3>
+<form>
+	<section>
+		<label><b>이메일</b></label>
+		<input type='email' id='strEmail' name='strEmail'>
+	</section>
+	<section>
+		<label><b>비밀번호</b></label>
+		<input type='password' id='strPassword' name='strPassword'>
+	</section>
+	<section>
+		<label><b>비밀번호 확인</b></label>
+		<input type="password" id='strPassword1'>
+	</section>
+	
+	<section class='w3-right'>
+		<button type='button' id='saveBtn' class='w3-button w3-blue'>회원등록</button>
+	</section>
+</form>
+</body>
+</html>
