@@ -37,6 +37,10 @@ $(document).ready(function(){
 			$('#strPassword').focus()
 			return
 		}
+		
+		// 서버로 전송
+		$('form').submit();
+		
 	})
 })
 

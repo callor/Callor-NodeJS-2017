@@ -41,20 +41,19 @@
 	<article id='loginBox'>
 		<section id='loginBody'>
 			<h3 class='w3-blue'>로그인</h3>
-			<form>
+			<h4 class='w3-red'><%- msg %></h4>
+			<form action='/login' method='post'>
 				<section>
 					<label><b>이메일</b></label> 
 					<input type='email' id='strEmail' name='strEmail'>
 					<label><b>비밀번호</b></label> 
 					<input type='password' id='strPassword' name='strPassword'>
-					
 					<section class='w3-right'>
 					<button type='submit' id='loginBtn' class='w3-button w3-blue'>
 					로그인
 					</button>
 					</section>
 				</section>
-
 			</form>
 		</section>
 	</article>
