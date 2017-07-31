@@ -12,7 +12,8 @@ var dbConn = mongoose.connection;
 dbConn.once('open',()=>{console.log('MongoDB OPEN')})
 dbConn.on('error',console.error);
 
-mongoose.connect('mongodb://localhost/iot',{useMongoClient:true});
+var dbconfig = require('./routes/dbconfig.js')
+mongoose.connect(dbconfig.dburi,{useMongoClient:true});
 
 var config = require('./routes/secret.js')
 
