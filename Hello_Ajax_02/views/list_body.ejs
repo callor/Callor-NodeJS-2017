@@ -1,0 +1,18 @@
+<table class='w3-table w3-border w3-hoverable'>
+	<tr>
+		<th>도서명</th>
+		<th>출판사</th>
+		<th>출판연도</th>
+		<th>장르</th>
+		<th>가격</th>
+	</tr>
+	<% list.forEach(function(item){  %>
+	<tr class='mList' id='<%- item._id %>'>
+		<td><%- item.strTitle %></td>
+		<td><%- item.strComp %></td>
+		<td><%- item.strYear %></td>
+		<td><%- item.strGenre %></td>
+		<td><%- item.intPrice %></td>
+	</tr>
+	<% }) %>
+</table>

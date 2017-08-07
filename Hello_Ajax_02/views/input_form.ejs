@@ -1,0 +1,81 @@
+<script>
+$(document).ready(function(){
+	$('label').addClass('w3-text-blue');
+	$('input').addClass('w3-input w3-border w3-hover-gray')
+	
+	var listView = function(){
+		
+		$.get('/list',function(result){
+			$('#view-list').html(result)
+		})
+	}
+	
+	$('#saveBtn').click(function(){
+	
+		if($('#strTitle').val() == '') {
+			alert('도서명을 입력하세요');
+			$('#strTitle').focus()
+			return false;
+		}
+		
+		// post method를 이용해서 서버로 form 값을 전송하라
+		$.post('/insert',$('form').serialize(), 
+				function(result) {
+			
+			if(result.msg == 'OK') 
+				alert('저장이 완료 되었습니다')
+				listView();
+		})
+	})
+	
+	listView();
+	
+	
+	
+})
+
+</script>
+
+<form class='w3-margin'>
+	<input type='hidden' name='id' value='id'>
+	<section>
+		<label><b>도서명</b></label> 
+		<input type='text' id='strTitle' name='strTitle'>
+	</section>
+	
+	<section>
+		<label><b>출판사</b></label> 
+		<input type='text' id='strComp'	name='strComp'>
+	</section>
+	
+	<section>
+		<label><b>장르</b></label> 
+		<input type='text' id='strGenre' name='strGenre'>
+	</section>
+	
+	<section>
+		<label><b>출판연도</b></label> 
+		<input type='text' id='strYear' name='strYear'>
+	</section>
+	
+	<section>
+		<label><b>가격</b></label> 
+		<input type='text' id='intPrice' name='intPrice'>
+	</section>
+	<section class='w3-right w3-margin'>
+		<button type='button' id='saveBtn' class='w3-button w3-blue'>저장</button>
+	</section>	
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+

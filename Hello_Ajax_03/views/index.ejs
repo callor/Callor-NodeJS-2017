@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include header.ejs %>
+<script src='/js/search.js'></script>
+</head>
+<body class='w3-light-gray w3-padding-16'>
+	<header class='w3-blue w3-margin'>
+		<h3 class='w3-padding-16'>네이버 API 실습</h3>
+	</header>
+	<article class='w3-container w3-margin w3-padding-16 w3-whilte'>
+	 <section class='w3-margin w3-col l5 m5 s5'>
+	 	<input type='radio' id='searchItem' name='searchItem' value='book'
+	 			class='w3-radio' checked>
+		<label>도서검색</label>
+	 	<input type='radio' id='searchItem' name='searchItem' value='movie'
+	 			class='w3-radio'>
+		<label>영화검색</label>
+	 	<input type='radio' id='searchItem' name='searchItem' value='news'
+	 			class='w3-radio'>
+		<label>뉴스검색</label>
+
+
+	 </section>
+	
+	 <section class='w3-margin w3-col l5 m5 s5'>
+	 	<input type='text' id='searchValue' name='searchValue'
+	 		class='w3-input w3-border w3-hoverable-light-gray'
+	 		placeholder='검색어를 입력하고 Enter키를 누르세요'>
+	 </section>
+	</article>
+	<article class='w3-container w3-margin w3-padding-16 w3-white'>
+		<section id='resultBody' class='w3-margin'>
+		</section>
+	</article>
+</body>
+</html>

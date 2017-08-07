@@ -1,0 +1,22 @@
+<style>
+section.bookbox {
+
+	overflow:auto;
+	height:300px;
+}
+
+</style>
+
+<section class='w3-row'>
+<% list.forEach(function(item){ %>
+
+   <section class='bookbox w3-col l2 m2 s2 w3-border'>
+   <a href='<%- item.link %>' target='_naver'>
+   <img src='<%- item.image %>' alt='책 이미지' class='w3-round'>
+   </a>
+	<div class='caption'><%- item.title %></div>   
+   
+   </section>
+
+<% }) %>
+</section>
