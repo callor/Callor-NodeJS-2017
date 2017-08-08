@@ -1,0 +1,52 @@
+<style>
+<!-- 한번보 방문하지 않은곳 -->
+a:link {
+	text-decoration:none;
+}
+
+<!-- 한번이라도 방문한 곳 -->
+a:visited {
+	text-decoration:none;
+}
+
+<!-- 마우스가 올려졌을때 -->
+a:hover {
+	text-decoreation:none;
+	color:blue;
+}
+
+<!-- 마우스를 클릭하는 순간 -->
+a:active {
+	text-decoreation:none;
+	color:hotpink;
+}
+
+ul.listbox {
+	overflow:auto;
+	height:300px;
+}
+
+
+</style>
+
+<section class='w3-row'>
+<% list.forEach(function(item){  %>
+ <ul class='w3-ul w3-hoverable w3-col l5 m5 s5 listbox'>
+ 	<li class='w3-card w3-margin'>
+
+		<a href='<%- item.link %>' target=_naver class='w3-hover'>
+		<h4 class='caption'><%- item.title %></h4>
+		</a>
+		
+		<p class='description'>
+		<%- item.description %>
+		</p>
+		
+		<a href='<%- item.bloggerlink %>' class='w3-text-blue' target=_blog>
+		<b><%- item.bloggername %></b>
+		</a>
+
+ 	</li>
+ </ul>
+<% }) %>
+</section>

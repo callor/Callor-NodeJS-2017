@@ -14,7 +14,31 @@ $(document).ready(function(){
 					}
 				)
 			}
+			if(sItem == "movie") {
+				$.post('/naver/movie',
+				{searchValue : $(this).val()},
+				function(result) {
+					$('#resultBody').html(result);
+				})
+			}
 			
+			if(sItem == "news") {
+				$.post('/naver/news',
+				{searchValue : $(this).val()},
+				function(result) {
+					$('#resultBody').html(result);
+				})
+			}
+
+			if(sItem == "blog") {
+				$.post('/naver/blog',
+				{searchValue : $(this).val()},
+				function(result) {
+					$('#resultBody').html(result);
+				})
+			}
+
+		
 		}
 	})
 })

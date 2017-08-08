@@ -1,0 +1,15 @@
+
+
+<section class='w3-row'>
+<% list.forEach(function(item){ %>
+	<ul class='w3-ul w3-hoverable'>
+		<li class='w3-card w3-margin'>
+			<a href='<%- item.link %>' target=_naver class='w3-hover'>
+			<h4 class='caption'><%- item.title %></h4>
+			</a>
+			<p class='description'><%- item.description %></p>
+			<a href='<%- item.originallink %>' target=_comp>[언론사바로가기]</a>
+		</li>
+	</ul>
+<% }) %>
+</section>

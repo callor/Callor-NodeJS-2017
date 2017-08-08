@@ -2,6 +2,31 @@
 <html>
 <head>
 <% include header.ejs %>
+<style>
+<!-- 한번보 방문하지 않은곳 -->
+a:link {
+	text-decoration:none;
+}
+
+<!-- 한번이라도 방문한 곳 -->
+a:visited {
+	text-decoration:none;
+}
+
+<!-- 마우스가 올려졌을때 -->
+a:hover {
+	text-decoreation:none;
+	color:blue;
+}
+
+<!-- 마우스를 클릭하는 순간 -->
+a:active {
+	text-decoreation:none;
+	color:hotpink;
+}
+
+
+</style>
 <script src='/js/search.js'></script>
 </head>
 <body class='w3-light-gray w3-padding-16'>
@@ -10,16 +35,22 @@
 	</header>
 	<article class='w3-container w3-margin w3-padding-16 w3-whilte'>
 	 <section class='w3-margin w3-col l5 m5 s5'>
+	 	
 	 	<input type='radio' id='searchItem' name='searchItem' value='book'
 	 			class='w3-radio' checked>
 		<label>도서검색</label>
+	 	
 	 	<input type='radio' id='searchItem' name='searchItem' value='movie'
 	 			class='w3-radio'>
 		<label>영화검색</label>
+		
 	 	<input type='radio' id='searchItem' name='searchItem' value='news'
 	 			class='w3-radio'>
 		<label>뉴스검색</label>
-
+		
+		<input type='radio' id='searchItem' name='searchItem' value='blog'
+	 			class='w3-radio'>
+		<label>블로그검색</label>
 
 	 </section>
 	
